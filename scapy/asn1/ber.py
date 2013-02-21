@@ -6,7 +6,7 @@
 """
 Basic Encoding Rules (BER) for ASN.1
 """
-
+import types
 from scapy.error import warning
 from scapy.utils import inet_aton,inet_ntoa
 from asn1 import ASN1_Decoding_Error,ASN1_Encoding_Error,ASN1_BadTag_Decoding_Error,ASN1_Codecs,ASN1_Class_UNIVERSAL,ASN1_Error,ASN1_DECODING_ERROR,ASN1_BADTAG
