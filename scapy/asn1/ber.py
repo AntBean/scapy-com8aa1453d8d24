@@ -246,7 +246,10 @@ class BERcodec_STRING(BERcodec_Object):
     tag = ASN1_Class_UNIVERSAL.STRING
     @classmethod
     def enc(cls,s):
-        return chr(cls.tag)+BER_len_enc(len(s))+s
+		if type(s)==types.StringType:
+			return chr(cls.tag)+BER_len_enc(len(s))+s
+		else:
+			return chr(cls.tag)+BER_len_enc(len(chr(s)))+chr(s)
     @classmethod
     def do_dec(cls, s, context=None, safe=False):
         l,s,t = cls.check_type_check_len(s)
